@@ -1,10 +1,2 @@
-# Knicks_Data_Graphs
-Playing around with Knicks seasons data to identify trends.
-Love the Knicks and they are finally watchable so now this data (hopefully) won't hurt as bad to look at.
-
-Scrubbed data from:
-
-Knicks Data - https://www.basketball-reference.com/teams/NYK/stats_per_game_totals.html
-Opponents Data - https://www.basketball-reference.com/teams/NYK/opp_stats_per_game_totals.html
-
-Will update when new data comes in.
+Wanted a space to incorporated dollars into visuals.
+Built a graph that can compare Payroll to various Knicks statistics from BBall Reference.

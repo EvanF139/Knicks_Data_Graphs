@@ -1,3 +1,45 @@
+fig, ax1 = plt.subplots(figsize=(10, 6))
+
+# Bar chart for Wins
+ax1.bar(W_Season_df['Season'], W_Season_df['W'], color='darkblue', alpha=0.7, label='Knicks Season Wins')
+#  = ax1.twinx()
+# ax2.bar(Heat_df['Season'], Heat_df['W'], color='green', alpha=0.65, label='Wins (Heat_df)')
+
+
+# Set up a secondary y-axis for the line plot
+ax2 = ax1.twinx()
+
+# Payroll
+ax2.plot(Payroll_df['Season'], Payroll_df['Payroll']/10000000, color='green', linestyle='--', marker='o', label='Payroll (in $Millions)')
+
+# Set labels and title
+
+ax1.set_xlabel('NBA Season')
+
+ax1.set_ylabel('Wins', labelpad = 20, fontsize = 'large')
+
+ax2.set_ylabel('Dollars (in $millions)', labelpad = 20, fontsize = 'large')
+
+ax1.set_title('The Knicks Rollercoaster', fontsize = 'x-large')
+
+ax1.axhline(y=41, color='orange', linestyle='--', linewidth=1, label='41 Wins (.500 Record)')
+
+ax2.plot(All_Seasons_WSC_Lined_Up_df['NBA_SC']/10000000, color='red', linestyle='--', marker='o', label='NBA_Salary_Cap (in $Millions)')
+
+# Add legend
+lines1, labels1 = ax1.get_legend_handles_labels()
+lines2, labels2 = ax2.get_legend_handles_labels()
+ax2.legend(lines1 + lines2, labels1 + labels2, loc='upper right', fontsize = 'x-small')
+
+# Rotate x-axis labels
+ax1.tick_params(axis='x', rotation=45)
+
+# Show plot
+plt.tight_layout()
+plt.show()
+
+/ - / - / - / - / - / - / - / - / - / - / - / - / - / - / - / - / - / - / - / - / - / - / - / - / - 
+
 # # BAR LINES CHART
 # 
 # # SHOWCASES KNICKS WINS V. THEIR PLAYERS SALARIES V.NBA SALARY CAP V. 41 WINS (.500 record)

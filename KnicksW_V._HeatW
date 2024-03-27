@@ -1,0 +1,28 @@
+# BAR CHART TO COMPARE KNICKS V. HEAT WINS
+
+# Determine the length of the shortest DataFrame
+min_length = min(len(Heat_PTS_df['Season']), len(Knicks_PTS_df['Season']))
+
+# Define the x-axis locations for each set of bars
+x1 = np.arange(min_length)  # X positions for Heat points
+x2 = x1 + bar_width  # Shift the x-axis for the second set of bars (Knicks points)
+
+# Plotting
+plt.figure(figsize=(10, 6))
+
+# Plot data from Heat_PTS_df
+plt.bar(x1, Heat_PTS_df['PTS'][:min_length], width=bar_width, color='red', label='Heat PPG')
+
+# Plot data from Knicks_PTS_df
+plt.bar(x2, Knicks_PTS_df['PTS'][:min_length], width=bar_width, color='darkblue', label='Knicks PPG', alpha=0.5)
+
+# Customize the plot
+plt.title('Miami Heat vs. New York Knicks Season PPG')
+plt.xlabel('Season')
+plt.ylabel('Points Per Game')
+plt.xticks(ticks=(x1 + x2) / 2, labels=Heat_PTS_df['Season'][:min_length], rotation=45)  # Set x-axis ticks and labels
+plt.legend()
+
+# Show plot
+plt.tight_layout()
+plt.show()
